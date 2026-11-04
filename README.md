@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![C++20](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
-[![MSBuild CI](https://github.com/NSDeathman/Just-RHI/actions/workflows/build.yml/badge.svg)](https://github.com/NSDeathman/Just-RHI/actions/workflows/build.yml)
+[![MSBuild CI](https://github.com/Presence-Collaboratory/Just-RHI/actions/workflows/build.yml/badge.svg)](https://github.com/Presence-Collaboratory/Just-RHI/actions/workflows/build.yml)
 
 A minimalistic render hardware interface (RHI) whose single goal is a **maximally simple API for the user**.
 
