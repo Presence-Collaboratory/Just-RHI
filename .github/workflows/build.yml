@@ -1,0 +1,39 @@
+name: MSBuild CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+        platform: [x64, x86]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+      with:
+        msbuild-architecture: x64
+
+    - name: Build solution
+      run: msbuild RHI.sln /m /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.platform }} /verbosity:minimal
+
+    - name: Upload build artifacts
+      if: matrix.configuration == 'Release'
+      uses: actions/upload-artifact@v4
+      with:
+        name: RHI-${{ matrix.platform }}-${{ matrix.configuration }}
+        path: |
+          **/bin/${{ matrix.platform }}/${{ matrix.configuration }}/
+          !**/*.obj
+          !**/*.pdb
+        if-no-files-found: warn
