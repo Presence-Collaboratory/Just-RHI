@@ -1,0 +1,23 @@
+/////////////////////////////////////////////////////////////////
+// Just RHI - Simple minimalistic RHI
+// Copyright (c) 2026 NSDeathman
+// Licensed under the MIT License.
+/////////////////////////////////////////////////////////////////
+#include <include/RHI.h>
+#include "Backends/DirectX12/DX12Device.h"
+/////////////////////////////////////////////////////////////////
+RHI_BEGIN
+
+extern "C" RHI_API IDevice * CreateDevice(BackendType type)
+{
+	switch (type)
+	{
+	case BackendType::DirectX12:
+		return new DX12Device();
+	default:
+		return nullptr;
+	}
+}
+
+RHI_END
+/////////////////////////////////////////////////////////////////

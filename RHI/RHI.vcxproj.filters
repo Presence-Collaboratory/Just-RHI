@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="sources\dllmain.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\RHI_BackendFactory.cpp">
+      <Filter>Backend factory</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Backends\DirectX12\DX12CommandList.cpp">
+      <Filter>Backends\DirectX 12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Backends\DirectX12\DX12Device.cpp">
+      <Filter>Backends\DirectX 12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Backends\DirectX12\DX12PipelineState.cpp">
+      <Filter>Backends\DirectX 12</Filter>
+    </ClCompile>
+    <ClCompile Include="sources\Backends\DirectX12\DX12Resources.cpp">
+      <Filter>Backends\DirectX 12</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\RHI_Types.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RHI_Resources.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RHI_PipelineState.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RHI_CommandList.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RHI_Device.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RHI.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Backends\DirectX12\DX12CommandList.h">
+      <Filter>Backends\DirectX 12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Backends\DirectX12\DX12Common.h">
+      <Filter>Backends\DirectX 12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Backends\DirectX12\DX12Conversions.h">
+      <Filter>Backends\DirectX 12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Backends\DirectX12\DX12Device.h">
+      <Filter>Backends\DirectX 12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Backends\DirectX12\DX12PipelineState.h">
+      <Filter>Backends\DirectX 12</Filter>
+    </ClInclude>
+    <ClInclude Include="sources\Backends\DirectX12\DX12Resources.h">
+      <Filter>Backends\DirectX 12</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RHI_API.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RHI_Macros.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Kernel">
+      <UniqueIdentifier>{5baeb500-9bfd-4dcc-92ab-82b0f22edb22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{ee263755-c8b2-4cfe-8f12-eaa629065256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Backends">
+      <UniqueIdentifier>{12705111-6532-49d8-b8da-0c1022e85b51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Backends\DirectX 12">
+      <UniqueIdentifier>{41496666-e701-4b21-b2f3-d16659ff9f2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Backend factory">
+      <UniqueIdentifier>{23800eef-51b2-4752-8639-6d308075180c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
