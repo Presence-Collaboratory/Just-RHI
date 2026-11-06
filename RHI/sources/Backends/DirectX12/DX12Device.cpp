@@ -29,6 +29,12 @@ bool DX12Device::Init(HWND hwnd, const DeviceDesc & desc)
 	m_desc = desc;
 	m_hwnd = hwnd;
 
+	if (desc.FramesInFlight < 2)
+	{
+		OutputDebugStringA("[DX12] FramesInFlight must be >= 2\n");
+		return false;
+	}
+
 	if (desc.EnableDebugLayer)
 	{
 		ComPtr<ID3D12Debug> debug;
@@ -85,6 +91,7 @@ bool DX12Device::Init(HWND hwnd, const DeviceDesc & desc)
 	if (!CreateRenderTargets()) return false;
 
 	m_frameIndex = desc.FramesInFlight - 1;
+	m_frameIndex = (m_frameIndex + 1) % m_desc.FramesInFlight;
 
 	OutputDebugStringA("[DX12] Device initialised\n");
 	return true;

@@ -24,7 +24,7 @@ inline DXGI_FORMAT ToDXGIFormat(Format f)
 	case Format::R32G32B32A32_FLOAT:   return DXGI_FORMAT_R32G32B32A32_FLOAT;
 	case Format::D24_UNORM_S8_UINT:    return DXGI_FORMAT_D24_UNORM_S8_UINT;
 	case Format::D32_FLOAT:            return DXGI_FORMAT_D32_FLOAT;
-	default:                               return DXGI_FORMAT_UNKNOWN;
+	default:                           return DXGI_FORMAT_UNKNOWN;
 	}
 }
 
@@ -37,7 +37,20 @@ inline D3D12_PRIMITIVE_TOPOLOGY ToD3D12Topology(Topology t)
 	case Topology::LineStrip:     return D3D_PRIMITIVE_TOPOLOGY_LINESTRIP;
 	case Topology::TriangleList:  return D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 	case Topology::TriangleStrip: return D3D_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP;
-	default:                          return D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	default:                      return D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	}
+}
+
+inline D3D12_PRIMITIVE_TOPOLOGY_TYPE ToD3D12TopologyType(Topology t)
+{
+	switch (t)
+	{
+	case Topology::PointList:      return D3D12_PRIMITIVE_TOPOLOGY_TYPE_POINT;
+	case Topology::LineList:
+	case Topology::LineStrip:      return D3D12_PRIMITIVE_TOPOLOGY_TYPE_LINE;
+	case Topology::TriangleList:
+	case Topology::TriangleStrip:  return D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
+	default:                       return D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
 	}
 }
 
@@ -57,7 +70,7 @@ inline D3D12_RESOURCE_STATES ToD3D12State(ResourceState s)
 	case ResourceState::CopySource:    return D3D12_RESOURCE_STATE_COPY_SOURCE;
 	case ResourceState::CopyDest:      return D3D12_RESOURCE_STATE_COPY_DEST;
 	case ResourceState::Present:       return D3D12_RESOURCE_STATE_PRESENT;
-	default:                               return D3D12_RESOURCE_STATE_COMMON;
+	default:                           return D3D12_RESOURCE_STATE_COMMON;
 	}
 }
 

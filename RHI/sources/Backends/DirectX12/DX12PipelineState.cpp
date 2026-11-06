@@ -90,7 +90,7 @@ DX12PipelineState::DX12PipelineState(ID3D12Device* device, const PipelineStateDe
 	pso.DepthStencilState = depth;
 	pso.InputLayout = {inputElems.data(), (UINT)inputElems.size()};
 	pso.IBStripCutValue = D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_DISABLED;
-	pso.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
+	pso.PrimitiveTopologyType = ToD3D12TopologyType(desc.Topology);
 	pso.NumRenderTargets = 1;
 	pso.RTVFormats[0] = ToDXGIFormat(desc.RTVFormat);
 	pso.DSVFormat = ToDXGIFormat(desc.DSVFormat);

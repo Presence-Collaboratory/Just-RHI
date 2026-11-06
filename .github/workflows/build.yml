@@ -33,7 +33,6 @@ jobs:
       with:
         name: RHI-${{ matrix.platform }}-${{ matrix.configuration }}
         path: |
-          **/bin/${{ matrix.platform }}/${{ matrix.configuration }}/
-          !**/*.obj
+          Build/Binaries/${{ matrix.platform }}/${{ matrix.configuration }}/
           !**/*.pdb
         if-no-files-found: warn
